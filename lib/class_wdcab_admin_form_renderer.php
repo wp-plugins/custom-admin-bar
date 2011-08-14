@@ -32,7 +32,7 @@ class Wdcab_AdminFormRenderer {
 	function create_title_box () {
 		$value = $this->_get_option('title');
 		echo "<input type='text' class='widefat' name='wdcab[title]' value='{$value}' />";
-		_e('<p>If you\'d like to use an image instead of text, please paste the full URL of your image in the box (starting with <code>http://</code> - e.g. <code>http://example.com/myimage.gif</code>).</p><p>For best results, make sure your image has trasnparent background and is no more then 28px tall.</p>', 'wdcab');
+		_e('<p>If you\'d like to use an image instead of text, please paste the full URL of your image in the box (starting with <code>http://</code> - e.g. <code>http://example.com/myimage.gif</code>).</p><p>For best results, make sure your image has a transparent background and is no more than 28px high.</p>', 'wdcab');
 	}
 
 	function create_links_box () {
@@ -60,7 +60,7 @@ class Wdcab_AdminFormRenderer {
 			$count++;
 		}
 		echo "</ul>";
-		_e('<p>Drag and drop steps to sort them in the order you want.</p>', 'wdcab');
+		_e('<p>Drag and drop links to sort them into the order you want.</p>', 'wdcab');
 	}
 
 	function create_add_link_box () {

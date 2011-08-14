@@ -1,7 +1,11 @@
 <div class="wrap">
 	<h2>Settings</h2>
 
+<?php if (WP_NETWORK_ADMIN) { ?>
 	<form action="settings.php" method="post">
+<?php } else { ?>
+	<form action="options.php" method="post">
+<?php } ?>
 
 	<?php settings_fields('wdcab_options'); ?>
 	<?php do_settings_sections('wdcab_options'); ?>

@@ -27,8 +27,6 @@ class Wdcab_AdminPages {
 				if (isset($_POST['wdcab']['links']['_last_'])) {
 					$last = $_POST['wdcab']['links']['_last_'];
 					unset($_POST['wdcab']['links']['_last_']);
-					//$last['url'] = rtrim($last['url_type'], '/') . $last['url'];
-					//unset($last['url_type']);
 					if (@$last['url'] && @$last['title']) $_POST['wdcab']['links'][] = $last;
 				}
 				if (isset($_POST['wdcab']['links'])) {
@@ -44,7 +42,9 @@ class Wdcab_AdminPages {
 				die;
 			}
 		}
-		add_submenu_page('settings.php', __('Custom Admin Bar', 'wdcab'), __('Custom Admin Bar', 'wdcab'), 'manage_network_options', 'wdcab', array($this, 'create_admin_page'));
+		$page = is_multisite() ? 'settings.php' : 'options-general.php';
+		$perms = is_multisite() ? 'manage_network_options' : 'manage_options';
+		add_submenu_page($page, __('Custom Admin Bar', 'wdcab'), __('Custom Admin Bar', 'wdcab'), $perms, 'wdcab', array($this, 'create_admin_page'));
 	}
 
 	function register_settings () {
@@ -54,8 +54,8 @@ class Wdcab_AdminPages {
 		add_settings_section('wdcab_settings', __('Settings', 'wdcab'), create_function('', ''), 'wdcab_options');
 		add_settings_field('wdcab_enable', __('Enable Custom entry', 'wdcab'), array($form, 'create_enabled_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_title', __('Entry title <br /><small>(text or image)</small>', 'wdcab'), array($form, 'create_title_box'), 'wdcab_options', 'wdcab_settings');
-		add_settings_field('wdcab_links', __('Configure Links', 'wdcab'), array($form, 'create_links_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_add_step', __('Add new link', 'wdcab'), array($form, 'create_add_link_box'), 'wdcab_options', 'wdcab_settings');
+		add_settings_field('wdcab_links', __('Configure Links', 'wdcab'), array($form, 'create_links_box'), 'wdcab_options', 'wdcab_settings');
 	}
 
 	function create_admin_page () {
@@ -63,20 +63,21 @@ class Wdcab_AdminPages {
 	}
 
 	function js_print_scripts () {
-		if (!WP_NETWORK_ADMIN) return;
 		if (!isset($_GET['page']) || 'wdcab' != $_GET['page']) return false;
 		wp_enqueue_script( array("jquery", "jquery-ui-core", "jquery-ui-sortable", 'jquery-ui-dialog') );
 	}
 
 	function css_print_styles () {
-
+		if (!isset($_GET['page']) || 'wdcab' != $_GET['page']) return false;
+		wp_enqueue_style('jquery-ui-dialog', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
 	}
 
 
 
 	function add_hooks () {
 		add_action('admin_init', array($this, 'register_settings'));
-		add_action('network_admin_menu', array($this, 'create_admin_menu_entry'));
+		$hook = is_multisite() ? 'network_admin_menu' : 'admin_menu';
+		add_action($hook, array($this, 'create_admin_menu_entry'));
 
 		add_action('admin_print_scripts', array($this, 'js_print_scripts'));
 		add_action('admin_print_styles', array($this, 'css_print_styles'));
