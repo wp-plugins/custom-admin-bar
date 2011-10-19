@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Admin Bar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-11 06:41+0100\n"
-"PO-Revision-Date: 2011-07-11 06:41+0100\n"
+"POT-Creation-Date: 2011-10-19 15:21+0100\n"
+"PO-Revision-Date: 2011-10-19 15:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: Incsub\n"
 "MIME-Version: 1.0\n"
@@ -22,42 +22,62 @@ msgid "No"
 msgstr ""
 
 #: lib/class_wdcab_admin_form_renderer.php:35
-msgid "<p>If you'd like to use an image instead of text, please paste the full URL of your image in the box (starting with <code>http://</code> - e.g. <code>http://example.com/myimage.gif</code>).</p><p>For best results, make sure your image has trasnparent background and is no more then 28px tall.</p>"
+msgid "<p>If you'd like to use an image instead of text, please paste the full URL of your image in the box (starting with <code>http://</code> - e.g. <code>http://example.com/myimage.gif</code>).</p><p>For best results, make sure your image has a transparent background and is no more than 28px high.</p>"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:52
-msgid "Delete"
+#: lib/class_wdcab_admin_form_renderer.php:57
+msgid "Nowhere, it is just a menu hub"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:54
-msgid "Edit"
+#: lib/class_wdcab_admin_form_renderer.php:60
+msgid "Main site home URL"
 msgstr ""
 
 #: lib/class_wdcab_admin_form_renderer.php:63
-msgid "<p>Drag and drop steps to sort them in the order you want.</p>"
+msgid "Current site home URL"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:68
+#: lib/class_wdcab_admin_form_renderer.php:66
+msgid "Site Admin area"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:69
+msgid "This URL"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:88
+msgid "Delete"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:90
+msgid "Edit"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:99
+msgid "<p>Drag and drop links to sort them into the order you want.</p>"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:104
 msgid "URL:"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:70
+#: lib/class_wdcab_admin_form_renderer.php:106
 msgid "Administrative page (e.g. \"post-new.php\" or \"themes.php\")"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:71
+#: lib/class_wdcab_admin_form_renderer.php:107
 msgid "Site page (e.g. \"/\" or \"/2007-06-05/an-old-post\")"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:72
+#: lib/class_wdcab_admin_form_renderer.php:108
 msgid "External page (e.g. \"http://www/example.com/2007-06-05/an-old-post\")"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:77
+#: lib/class_wdcab_admin_form_renderer.php:113
 msgid "Title:"
 msgstr ""
 
-#: lib/class_wdcab_admin_form_renderer.php:80
+#: lib/class_wdcab_admin_form_renderer.php:116
 msgid "Add"
 msgstr ""
 
@@ -78,10 +98,14 @@ msgid "Entry title <br /><small>(text or image)</small>"
 msgstr ""
 
 #: lib/class_wdcab_admin_pages.php:57
-msgid "Configure Links"
+msgid "Title link leads to"
 msgstr ""
 
 #: lib/class_wdcab_admin_pages.php:58
 msgid "Add new link"
+msgstr ""
+
+#: lib/class_wdcab_admin_pages.php:59
+msgid "Configure Links"
 msgstr ""
 

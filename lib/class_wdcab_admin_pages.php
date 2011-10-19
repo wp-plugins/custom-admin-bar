@@ -54,6 +54,7 @@ class Wdcab_AdminPages {
 		add_settings_section('wdcab_settings', __('Settings', 'wdcab'), create_function('', ''), 'wdcab_options');
 		add_settings_field('wdcab_enable', __('Enable Custom entry', 'wdcab'), array($form, 'create_enabled_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_title', __('Entry title <br /><small>(text or image)</small>', 'wdcab'), array($form, 'create_title_box'), 'wdcab_options', 'wdcab_settings');
+		add_settings_field('wdcab_title_link', __('Title link leads to', 'wdcab'), array($form, 'create_title_link_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_add_step', __('Add new link', 'wdcab'), array($form, 'create_add_link_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_links', __('Configure Links', 'wdcab'), array($form, 'create_links_box'), 'wdcab_options', 'wdcab_settings');
 	}

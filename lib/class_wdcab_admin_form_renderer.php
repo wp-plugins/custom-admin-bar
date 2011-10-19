@@ -35,6 +35,42 @@ class Wdcab_AdminFormRenderer {
 		_e('<p>If you\'d like to use an image instead of text, please paste the full URL of your image in the box (starting with <code>http://</code> - e.g. <code>http://example.com/myimage.gif</code>).</p><p>For best results, make sure your image has a transparent background and is no more than 28px high.</p>', 'wdcab');
 	}
 
+	function create_title_link_box () {
+		$value = $this->_get_option('title_link');
+		$custom_checked = true;
+		$allowed = array(
+			'network_site_url', 'site_url', 'admin_url'
+		);
+		if ('#' == $value) {
+			$value = '';
+			$custom_checked = false;
+		}
+		if (in_array($value, $allowed)) {
+			$value = $value();
+			$custom_checked = false;
+		}
+		if ($custom_checked) {
+			$value = esc_url($value);
+			$custom_checked = 'checked="checked"';
+		}
+		echo
+			$this->_create_radiobox('title_link', '#') . '<label for="title_link-#">' . __('Nowhere, it is just a menu hub', 'wdcab') . '</label><br />'
+		;
+		if (is_multisite()) echo
+			$this->_create_radiobox('title_link', 'network_site_url') . '<label for="title_link-network_site_url">' . __('Main site home URL', 'wdcab') . '</label><br />'
+		;
+		echo
+			$this->_create_radiobox('title_link', 'site_url') . '<label for="title_link-site_url">' . __('Current site home URL', 'wdcab') . '</label><br />'
+		;
+		echo
+			$this->_create_radiobox('title_link', 'admin_url') . '<label for="title_link-admin_url">' . __('Site Admin area', 'wdcab') . '</label><br />'
+		;
+		echo
+			'<input type="radio" name="wdcab[title_link]" ' . $custom_checked . ' id="title_link-this_url-switch" /><label for="title_link-this_url-switch">' . __('This URL', 'wdcab') . ':</label> ' .
+			"<input type='text' id='title_link-this_url' size='48' name='wdcab[title_link]' value='{$value}' disabled='disabled' /><br />"
+		;
+	}
+
 	function create_links_box () {
 		$steps = $this->_get_option('links');
 		$steps = is_array($steps) ? $steps : array();
