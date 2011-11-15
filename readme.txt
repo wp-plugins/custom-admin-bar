@@ -3,7 +3,7 @@ Contributors: WPMUDEV, Vebailovity
 Tags: custom admin bar, customize admin, admin bar, branding
 Requires at least: 3.1
 Tested up to: 3.2.1
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 With Custom Admin Bar you can provide access to anything on the web from a convenient drop-down menu in the admin bar!
 
