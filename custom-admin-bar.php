@@ -3,7 +3,7 @@
 Plugin Name: Custom Admin Bar
 Plugin URI: http://premium.wpmudev.org/project/custom-admin-bar
 Description: Adds a custom drop-down entry to your admin bar.
-Version: 1.2.1
+Version: 1.3
 Author: Ve Bailovity (Incsub)
 Author URI: http://premium.wpmudev.org
 
@@ -89,6 +89,19 @@ function wdcab_add_to_admin_bar () {
 
 }
 
+function wdcab_remove_from_admin_bar () {
+	global $wp_version;
+	$version = preg_replace('/-.*$/', '', $wp_version);
+	if (version_compare($version, '3.3', '>=')) {
+		global $wp_admin_bar;
+		$opts = get_site_option('wdcab');
+		$disabled = is_array(@$opts['disabled_menus']) ? $opts['disabled_menus'] : array();
+		foreach ($disabled as $id) {
+			$wp_admin_bar->remove_node($id);
+		}
+	}
+}
+
 if (is_admin()) {
 	require_once WDCAB_PLUGIN_BASE_DIR . '/lib/class_wdcab_admin_form_renderer.php';
 	require_once WDCAB_PLUGIN_BASE_DIR . '/lib/class_wdcab_admin_pages.php';
@@ -96,3 +109,4 @@ if (is_admin()) {
 }
 
 add_action('admin_bar_menu', 'wdcab_add_to_admin_bar', 1);
+add_action('admin_bar_menu', 'wdcab_remove_from_admin_bar', 999);

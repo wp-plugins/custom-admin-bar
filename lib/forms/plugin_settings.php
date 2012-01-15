@@ -51,6 +51,12 @@
 (function ($) {
 $(function () {
 
+function titleUrlSwitch () {
+	if ($("#title_link-this_url-switch").is(":checked")) $("#title_link-this_url").attr("disabled", false);
+	else $("#title_link-this_url").attr("disabled", true);
+}
+$('[name="wdcab[title_link]"]').change(titleUrlSwitch);
+titleUrlSwitch();
 
 function updateUrlPreview () {
 	var type = false;

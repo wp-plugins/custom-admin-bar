@@ -115,4 +115,27 @@ class Wdcab_AdminFormRenderer {
 
 		echo "<input type='submit' value='" . __('Add', 'wdcab') . "' />";
 	}
+
+	function create_disable_box () {
+		$_menus = array (
+			'wp-logo' => __('WordPress menu', 'wdcab'),
+			'site-name' => __('Site menu', 'wdcab'),
+			'my-sites' => __('My Sites', 'wdcab'),
+			'new-content' => __('Add New', 'wdcab'),
+			'comments' => __('Comments', 'wdcab'),
+			'updates' => __('Updates', 'wdcab'),
+		);
+		$disabled = $this->_get_option('disabled_menus');
+		$disabled = is_array($disabled) ? $disabled : array();
+		
+		echo '<input type="hidden" name="wdcab[disabled_menus]" value="" />';
+		foreach ($_menus as $id => $lbl) {
+			$checked = in_array($id, $disabled) ? 'checked="checked"' : '';
+			echo '' .
+				"<input type='checkbox' name='wdcab[disabled_menus][]' id='wdcab-disabled_menus-{$id}' value='{$id}' {$checked}>" .
+				"&nbsp;" .
+				"<label for='wdcab-disabled_menus-{$id}'>{$lbl}</label>" .
+			"<br />";
+		}
+	}
 }

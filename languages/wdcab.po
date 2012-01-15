@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Admin Bar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-19 15:21+0100\n"
-"PO-Revision-Date: 2011-10-19 15:21+0100\n"
+"POT-Creation-Date: 2012-01-14 16:30+0100\n"
+"PO-Revision-Date: 2012-01-14 16:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: Incsub\n"
 "MIME-Version: 1.0\n"
@@ -81,31 +81,59 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+#: lib/class_wdcab_admin_form_renderer.php:121
+msgid "WordPress menu"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:122
+msgid "Site menu"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:123
+msgid "My Sites"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:124
+msgid "Add New"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:125
+msgid "Comments"
+msgstr ""
+
+#: lib/class_wdcab_admin_form_renderer.php:126
+msgid "Updates"
+msgstr ""
+
 #: lib/class_wdcab_admin_pages.php:47
 msgid "Custom Admin Bar"
 msgstr ""
 
-#: lib/class_wdcab_admin_pages.php:54
+#: lib/class_wdcab_admin_pages.php:56
 msgid "Settings"
 msgstr ""
 
-#: lib/class_wdcab_admin_pages.php:55
+#: lib/class_wdcab_admin_pages.php:57
 msgid "Enable Custom entry"
 msgstr ""
 
-#: lib/class_wdcab_admin_pages.php:56
+#: lib/class_wdcab_admin_pages.php:58
 msgid "Entry title <br /><small>(text or image)</small>"
 msgstr ""
 
-#: lib/class_wdcab_admin_pages.php:57
+#: lib/class_wdcab_admin_pages.php:59
 msgid "Title link leads to"
 msgstr ""
 
-#: lib/class_wdcab_admin_pages.php:58
+#: lib/class_wdcab_admin_pages.php:60
 msgid "Add new link"
 msgstr ""
 
-#: lib/class_wdcab_admin_pages.php:59
+#: lib/class_wdcab_admin_pages.php:61
 msgid "Configure Links"
+msgstr ""
+
+#: lib/class_wdcab_admin_pages.php:63
+msgid "Disable WordPress menu items"
 msgstr ""
 

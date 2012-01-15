@@ -2,8 +2,8 @@
 Contributors: WPMUDEV, Vebailovity
 Tags: custom admin bar, customize admin, admin bar, branding
 Requires at least: 3.1
-Tested up to: 3.2.1
-Stable tag: 1.2.1
+Tested up to: 3.3.1
+Stable tag: 1.3
 
 With Custom Admin Bar you can provide access to anything on the web from a convenient drop-down menu in the admin bar!
 
@@ -59,6 +59,18 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 
 == Changelog ==
 
+= 1.3 =
+* Added optional removal of default WordPress 3.3 menu items.
+
+= 1.2.1 =
+* Fix for empty root menu item not showing.
+
+= 1.2 =
+* Added title link selection.
+* Fix for menu position under BuddyPress.
+
+= 1.1 =
+* Single installs compatibility
 
 = 1.0 =
 * Initial Release

@@ -48,6 +48,8 @@ class Wdcab_AdminPages {
 	}
 
 	function register_settings () {
+		global $wp_version;
+		$version = preg_replace('/-.*$/', '', $wp_version);
 		$form = new Wdcab_AdminFormRenderer;
 
 		register_setting('wdcab', 'wdcab');
@@ -57,6 +59,9 @@ class Wdcab_AdminPages {
 		add_settings_field('wdcab_title_link', __('Title link leads to', 'wdcab'), array($form, 'create_title_link_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_add_step', __('Add new link', 'wdcab'), array($form, 'create_add_link_box'), 'wdcab_options', 'wdcab_settings');
 		add_settings_field('wdcab_links', __('Configure Links', 'wdcab'), array($form, 'create_links_box'), 'wdcab_options', 'wdcab_settings');
+		if (version_compare($version, '3.3', '>=')) {
+			add_settings_field('wdcab_disable', __('Disable WordPress menu items', 'wdcab'), array($form, 'create_disable_box'), 'wdcab_options', 'wdcab_settings');
+		}
 	}
 
 	function create_admin_page () {
