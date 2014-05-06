@@ -2,7 +2,7 @@
 Contributors: WPMUDEV, Vebailovity
 Tags: custom admin bar, customize admin, admin bar, branding
 Requires at least: 3.1
-Tested up to: 3.9
+Tested up to: 3.9.1
 Stable tag: 1.3.1
 
 With Custom Admin Bar you can provide access to anything on the web from a convenient drop-down menu in the admin bar!
@@ -10,6 +10,8 @@ With Custom Admin Bar you can provide access to anything on the web from a conve
 == Description ==
 
 Easily add your own link or logo to the WordPress Admin Bar.  Then highlight important links for your users through a simple drop-down menu!
+
+[youtube https://www.youtube.com/watch?v=Sj2l1N2ITKI]
 
 The drag-and-drop ordering makes it easy to create a unique list of important links for your site.
 
