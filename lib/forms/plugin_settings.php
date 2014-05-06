@@ -10,6 +10,7 @@
 	<?php settings_fields('wdcab_options'); ?>
 	<?php do_settings_sections('wdcab_options'); ?>
 	<p class="submit">
+		<?php wp_nonce_field('wdcab_options', 'wdcab_options', false); ?>
 		<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
 	</p>
 	</form>

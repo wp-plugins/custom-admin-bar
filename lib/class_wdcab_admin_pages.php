@@ -21,7 +21,10 @@ class Wdcab_AdminPages {
 	}
 
 	function create_admin_menu_entry () {
-		if (@$_POST && isset($_POST['option_page'])) {
+		$page = is_multisite() ? 'settings.php' : 'options-general.php';
+		$perms = is_multisite() ? 'manage_network_options' : 'manage_options';
+
+		if (!empty($_POST) && isset($_POST['option_page']) && current_user_can($perms) && check_admin_referer('wdcab_options', 'wdcab_options')) {
 			$changed = false;
 			if ('wdcab_options' == @$_POST['option_page']) {
 				if (isset($_POST['wdcab']['links']['_last_'])) {
@@ -42,8 +45,6 @@ class Wdcab_AdminPages {
 				die;
 			}
 		}
-		$page = is_multisite() ? 'settings.php' : 'options-general.php';
-		$perms = is_multisite() ? 'manage_network_options' : 'manage_options';
 		add_submenu_page($page, __('Custom Admin Bar', 'wdcab'), __('Custom Admin Bar', 'wdcab'), $perms, 'wdcab', array($this, 'create_admin_page'));
 	}
 
