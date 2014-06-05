@@ -3,7 +3,7 @@ Contributors: WPMUDEV, Vebailovity
 Tags: custom admin bar, customize admin, admin bar, branding
 Requires at least: 3.1
 Tested up to: 3.9.1
-Stable tag: 1.3.1
+Stable tag: trunk
 
 With Custom Admin Bar you can provide access to anything on the web from a convenient drop-down menu in the admin bar!
 
@@ -60,6 +60,9 @@ We provide comprehensive and guaranteed support on the <a href='http://premium.w
 3. Front-end Display
 
 == Changelog ==
+
+= 1.3.1.1 =
+* Minor updates.
 
 = 1.3.1 =
 * Minor updates.

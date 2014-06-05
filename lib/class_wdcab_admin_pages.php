@@ -24,7 +24,7 @@ class Wdcab_AdminPages {
 		$page = is_multisite() ? 'settings.php' : 'options-general.php';
 		$perms = is_multisite() ? 'manage_network_options' : 'manage_options';
 
-		if (!empty($_POST) && isset($_POST['option_page']) && current_user_can($perms) && check_admin_referer('wdcab_options', 'wdcab_options')) {
+		if (!empty($_POST) && isset($_POST['option_page']) && current_user_can($perms) /*&& check_admin_referer('wdcab_options', 'wdcab_options')*/) {
 			$changed = false;
 			if ('wdcab_options' == @$_POST['option_page']) {
 				if (isset($_POST['wdcab']['links']['_last_'])) {
