@@ -1,8 +1,8 @@
 === Custom Admin Bar ===
-Contributors: WPMUDEV, Vebailovity
+Contributors: WPMUDEV
 Tags: custom admin bar, customize admin, admin bar, branding, Brand, WP Admin Bar, Toolbar, Tool Bar, Header Bar, adminbar, WordPress Menu, Admin Bar Logo
 Requires at least: 3.1
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: trunk
 
 With Custom Admin Bar you can provide access to anything on the web from a convenient drop-down menu in the admin bar!
